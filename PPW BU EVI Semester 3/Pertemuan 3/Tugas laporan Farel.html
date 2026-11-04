@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Penjualan Farel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        /* Warna Latar Belakang */
+        .bg-green-header { background-color: #d1dfb8; } 
+        .bg-peach { background-color: #fcd5b4; }
+        .bg-blue { background-color: #bce6eb; }
+        .bg-purple { background-color: #df6bf3; } 
+        .bg-green-data { background-color: #dbe4c2; }
+        .bg-yellow { background-color: #ffff00; } 
+        
+        /* Spesifik Teks */
+        .title-text {
+            color: red;
+            font-weight: bold;
+        }
+        .footer-text {
+            text-align: left;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+        .left-align {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+       <!-- Judul -->
+        <tr>
+            <th colspan="9" class="bg-green-header title-text">LAPORAN PENJUALAN</th>
+        </tr>
+
+        <!-- Nama Penerbit & Periode -->
+        <tr>
+            <th rowspan="4" colspan="2" class="bg-peach">NAMA<br>PENERBIT</th>
+            <th colspan="7" class="bg-peach">PERIODE</th>
+        </tr>
+
+        <!-- Tahun -->
+        <tr>
+            <th colspan="2" class="bg-peach">2018</th>
+            <th colspan="2" class="bg-peach">2019</th>
+            <th colspan="3" class="bg-peach">2020</th>
+        </tr>
+
+        <!-- Kategori Keterampilan -->
+        <tr>
+            <th colspan="2" class="bg-blue">Pemrograman</th>
+            <th colspan="2" class="bg-blue">Animasi</th>
+            <th colspan="3" class="bg-blue">Desain</th>
+        </tr>
+
+        <!-- Sub-Kategori / Software -->
+        <tr>
+            <th class="bg-purple">PHP</th>
+            <th class="bg-purple">Java</th>
+            <th class="bg-purple">Flash</th>
+            <th class="bg-purple">Blender<br>3D</th>
+            <th class="bg-purple">Auto<br>cad</th>
+            <th class="bg-purple">Corel<br>Draw</th>
+            <th class="bg-purple">Photoshop</th>
+        </tr>
+
+        <!-- Baris Data 1 -->
+        <tr class="bg-green-data">
+            <td>1</td>
+            <td class="left-align">Agus Munar</td>
+            <td>30</td>
+            <td>40</td>
+            <td>50</td>
+            <td>35</td>
+            <td>45</td>
+            <td>70</td>
+            <td>55</td>
+        </tr>
+
+        <!-- Baris Data 2 -->
+        <tr class="bg-green-data">
+            <td>2</td>
+            <td class="left-align">Barberia</td>
+            <td>45</td>
+            <td>30</td>
+            <td>60</td>
+            <td>70</td>
+            <td>10</td>
+            <td>40</td>
+            <td>60</td>
+        </tr>
+
+        <!-- Baris Data 3 -->
+        <tr class="bg-green-data">
+            <td>3</td>
+            <td class="left-align">Elexiona</td>
+            <td>60</td>
+            <td>75</td>
+            <td>90</td>
+            <td>75</td>
+            <td>60</td>
+            <td>78</td>
+            <td>90</td>
+        </tr>
+
+        <!-- Identitas -->
+        <tr>
+            <td colspan="9" class="bg-yellow footer-text">
+                Create By : Farel Ilyasa Habi Pratama<br>
+                NIM : 25041450138<br>
+                Kelas : 2583E<br>
+                Mata Kuliah : PERANCANGAN DAN PEMROGRAMAN WEB
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

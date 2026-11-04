@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Absensi Canggih</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2 class="judul-utama">✨ Sistem Absensi & Database Mahasiswa</h2>
+    
+    <div class="card fade-in-up">
+        <h3>Tambah Data Baru</h3>
+        <form id="formMahasiswa">
+            <div class="input-group">
+                <input type="text" id="nama" placeholder="Nama Lengkap" required>
+                <input type="number" id="nim" placeholder="NIM (Nomor Induk)" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="kodeMk" placeholder="Kode Mata Kuliah" required>
+                <input type="number" id="ipk" placeholder="Nilai IPK (contoh: 3.8)" step="0.01" required>
+            </div>
+            <button type="submit" class="btn-utama">Simpan ke Database</button>
+        </form>
+    </div>
+
+    <div class="card panel-algoritma fade-in-up" style="animation-delay: 0.2s;">
+        <h3>Panel Kontrol Data</h3>
+        
+        <div class="grup-kontrol">
+            <p><strong>Pencarian:</strong></p>
+            <input type="text" id="inputSeq" placeholder="🔍 Sequential Search: Ketik Nama/NIM...">
+            
+            <div class="flex-bar">
+                <input type="number" id="inputBin" placeholder="🎯 Binary Search: Masukkan NIM Tepat">
+                <button id="btnBinary" class="btn-cari">Cari Cepat</button>
+            </div>
+        </div>
+
+        <div class="grup-kontrol flex-bar">
+            <p><strong>Pengurutan:</strong></p>
+            <button id="btnBubble" class="btn-sort btn-ungu">Bubble Sort (NIM)</button>
+            <button id="btnSelection" class="btn-sort btn-oren">Selection Sort (IPK)</button>
+            <button id="btnReset" class="btn-sort btn-abu">Reset Tampilan</button>
+        </div>
+
+        <div class="grup-kontrol">
+            <button id="btnExport" class="btn-export">⬇️ Download Data (Excel/CSV)</button>
+        </div>
+    </div>
+
+    <div class="table-container fade-in-up" style="animation-delay: 0.4s;">
+        <table>
+            <thead>
+                <tr>
+                    <th>NIM</th>
+                    <th>Nama</th>
+                    <th>Kode MK</th>
+                    <th>IPK</th>
+                </tr>
+            </thead>
+            <tbody id="isiTabel">
+                </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+myInt = int(input(inputkan nilai : ))

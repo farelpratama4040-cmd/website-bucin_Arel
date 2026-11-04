@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guest Book | Toko Farel Collection</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1efe9;
+      color: #111;
+    }
+    .page {
+      width: 980px;
+      margin: 24px auto;
+      background: #f5f3ee;
+      border: 1px solid #d7d0c5;
+      box-shadow: 0 0 12px rgba(0,0,0,0.12);
+    }
+    .header {
+      background: linear-gradient(135deg, #111827 0%, #0f766e 100%);
+      text-align: center;
+      padding: 18px 20px 0;
+    }
+    .brand {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      min-height: 110px;
+    }
+    .shoe-icon {
+      font-size: 40px;
+      color: #fcd34d;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+    }
+    h1 {
+      margin: 0;
+      font-size: 50px;
+      color: #fff;
+      font-weight: 800;
+    }
+    .tagline {
+      margin: 0;
+      padding-bottom: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      font-style: italic;
+      color: #d1fae5;
+    }
+    .nav {
+      display: flex;
+      background: #111827;
+      border-top: 1px solid rgba(255,255,255,0.3);
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+    .nav a {
+      flex: 1;
+      text-align: center;
+      padding: 14px 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+    .nav a:last-child { border-right: none; }
+    .nav a:hover { background: rgba(255,255,255,0.08); }
+    .content {
+      background: #f4efe8;
+      padding: 26px 28px 32px;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+    }
+    .panel {
+      background: #fffaf3;
+      border: 1px solid #e4d6af;
+      padding: 18px;
+    }
+    .panel h2 {
+      margin-top: 0;
+      color: #0f172a;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #c7c2b8;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .btn {
+      background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+      border: none;
+      color: white;
+      padding: 12px 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .comment {
+      background: white;
+      border: 1px solid #e5e7eb;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+    }
+    .comment strong { display: block; margin-bottom: 5px; }
+    footer {
+      text-align: center;
+      font-weight: bold;
+      background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+      padding: 18px 10px;
+      border-top: 2px solid #111;
+    }
+    @media (max-width: 760px) {
+      .page { width: 96%; }
+      .layout { grid-template-columns: 1fr; }
+      .nav { flex-wrap: wrap; }
+      .nav a { min-width: 50%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="brand">
+        <span class="shoe-icon">👟</span>
+        <h1>Toko Farel Collection</h1>
+        <span class="shoe-icon">👟</span>
+      </div>
+      <p class="tagline">~ Trendy Sneakers & Street Style ~</p>
+    </header>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="Tugas UTS Farel.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="payment.html">Checkout</a>
+      <a href="flowers.html">Collection</a>
+      <a href="guestbook.html">Guest Book</a>
+    </nav>
+
+    <main class="content">
+      <div class="layout">
+        <section class="panel">
+          <h2>Guest Book</h2>
+          <form>
+            <label>Nama</label>
+            <input type="text" placeholder="Masukkan nama Anda" />
+
+            <label>Email</label>
+            <input type="email" placeholder="nama@email.com" />
+
+            <label>Rating</label>
+            <select>
+              <option>★★★★★ Sangat Puas</option>
+              <option>★★★★☆ Puas</option>
+              <option>★★★☆☆ Cukup</option>
+            </select>
+
+            <label>Pesan</label>
+            <textarea placeholder="Tulis pengalaman Anda saat membeli sepatu di toko kami..."></textarea>
+
+            <button type="submit" class="btn">Kirim</button>
+          </form>
+        </section>
+
+        <aside class="panel">
+          <h2>Ulasan Pelanggan</h2>
+          <div class="comment">
+            <strong>Rina S.</strong>
+            Sepatu yang saya pilih sangat nyaman dipakai sehari-hari dan desainnya keren banget.
+          </div>
+          <div class="comment">
+            <strong>Ahmad K.</strong>
+            Layanan cepat, kurir tepat waktu, dan kualitas produknya sesuai dengan advertorial.
+          </div>
+          <div class="comment">
+            <strong>Putri M.</strong>
+            Saya suka banget model sneakersnya yang hits dan cocok untuk outfit casual.
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      UTS Perancangan dan Pemrograman Web - Farel Ilyasa Habi Pratama, 25041450138
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | Toko Farel Collection</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3efe8;
+      color: #111;
+    }
+    .page {
+      width: 980px;
+      margin: 24px auto;
+      background: #f8f5f1;
+      border: 1px solid #d5d0c6;
+      box-shadow: 0 0 12px rgba(0,0,0,0.12);
+    }
+    .header {
+      background: linear-gradient(135deg, #111827 0%, #0f766e 100%);
+      text-align: center;
+      padding: 18px 20px 0;
+    }
+    .brand {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      min-height: 110px;
+    }
+    .shoe-icon {
+      font-size: 40px;
+      color: #fcd34d;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+    }
+    h1 {
+      margin: 0;
+      font-size: 50px;
+      color: #fff;
+      font-weight: 800;
+    }
+    .tagline {
+      margin: 0;
+      padding-bottom: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      font-style: italic;
+      color: #d1fae5;
+    }
+    .nav {
+      display: flex;
+      background: #111827;
+      border-top: 1px solid rgba(255,255,255,0.3);
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+    .nav a {
+      flex: 1;
+      text-align: center;
+      padding: 14px 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+    .nav a:last-child { border-right: none; }
+    .nav a:hover { background: rgba(255,255,255,0.08); }
+    .content {
+      background: #f4efe8;
+      padding: 26px 28px 32px;
+    }
+    .panel {
+      background: #fffaf3;
+      border: 1px solid #e1d3b5;
+      padding: 20px;
+    }
+    .panel h2 {
+      margin-top: 0;
+      color: #0f172a;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #c7c2b8;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+    textarea { resize: vertical; min-height: 100px; }
+    .full { grid-column: 1 / -1; }
+    .btn {
+      background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      font-weight: bold;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 8px;
+    }
+    .summary {
+      margin-top: 24px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      padding: 16px;
+    }
+    .summary table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .summary th, .summary td {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 10px 8px;
+      text-align: left;
+    }
+    footer {
+      text-align: center;
+      font-weight: bold;
+      background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+      padding: 18px 10px;
+      border-top: 2px solid #111;
+    }
+    @media (max-width: 760px) {
+      .page { width: 96%; }
+      .form-grid { grid-template-columns: 1fr; }
+      .nav { flex-wrap: wrap; }
+      .nav a { min-width: 50%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="brand">
+        <span class="shoe-icon">👟</span>
+        <h1>Toko Farel Collection</h1>
+        <span class="shoe-icon">👟</span>
+      </div>
+      <p class="tagline">~ Trendy Sneakers & Street Style ~</p>
+    </header>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="Tugas UTS Farel.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="payment.html">Checkout</a>
+      <a href="flowers.html">Collection</a>
+      <a href="guestbook.html">Guest Book</a>
+    </nav>
+
+    <main class="content">
+      <div class="panel">
+        <h2>Konfirmasi Pembayaran</h2>
+        <form>
+          <div class="form-grid">
+            <div>
+              <label>Nama Lengkap</label>
+              <input type="text" placeholder="Masukkan nama lengkap" />
+            </div>
+            <div>
+              <label>Nomor Order</label>
+              <input type="text" placeholder="FAR-2048" />
+            </div>
+            <div>
+              <label>Metode Pembayaran</label>
+              <select>
+                <option>Transfer Bank</option>
+                <option>E-Wallet</option>
+                <option>COD</option>
+              </select>
+            </div>
+            <div>
+              <label>Jumlah Transfer</label>
+              <input type="text" placeholder="Rp 1.250.000" />
+            </div>
+            <div class="full">
+              <label>Bank Tujuan</label>
+              <input type="text" placeholder="BCA / BRI / Mandiri" />
+            </div>
+            <div class="full">
+              <label>Alamat Pengiriman</label>
+              <textarea placeholder="Tulis alamat lengkap pengiriman Anda..."></textarea>
+            </div>
+            <div class="full">
+              <button class="btn" type="submit">Kirim Konfirmasi</button>
+            </div>
+          </div>
+        </form>
+
+        <div class="summary">
+          <h3>Ringkasan Pesanan</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Produk</th>
+                <th>Harga</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nike Air Max Pulse</td>
+                <td>Rp 1.250.000</td>
+              </tr>
+              <tr>
+                <td>Biaya Pengiriman</td>
+                <td>Rp 35.000</td>
+              </tr>
+              <tr>
+                <td><strong>Total</strong></td>
+                <td><strong>Rp 1.285.000</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      UTS Perancangan dan Pemrograman Web - Farel Ilyasa Habi Pratama, 25041450138
+    </footer>
+  </div>
+</body>
+</html>

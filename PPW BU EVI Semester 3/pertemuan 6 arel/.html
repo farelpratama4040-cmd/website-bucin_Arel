@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Layout</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Main Container */
+        .wrapper {
+            width: 800px;
+            max-width: 100%;
+            background-color: #a82e2e;
+            border: 2px solid #5a0e0e;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            margin-top: 0;
+        }
+
+        /* 1. Header Section */
+        header {
+            background-color: #ab2a2a;
+            color: #9ad672;
+            text-align: center;
+            padding: 35px 10px;
+            border-bottom: 2px solid #5a0e0e;
+        }
+
+        header h1 {
+            font-size: 38px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px #000;
+            letter-spacing: 0.5px;
+        }
+
+        /* 2. Navigation Menu */
+        nav {
+            display: flex;
+            background-color: #a82e2e;
+            padding: 5px;
+            border-bottom: 2px solid #5a0e0e;
+        }
+
+        nav a {
+            flex: 1;
+            background-color: #f7bd7f;
+            color: #3b0a0a;
+            text-decoration: none;
+            text-align: center;
+            padding: 8px 5px;
+            margin: 0 3px;
+            font-weight: bold;
+            font-size: 16px;
+            border: 1px solid #731212;
+            display: block;
+        }
+
+        nav a:hover {
+            background-color: #eab070;
+        }
+
+        /* Main Content Container (Sidebar + Content) */
+        .main-container {
+            display: flex;
+            background-color: #a82e2e;
+            padding: 6px;
+            gap: 6px;
+        }
+
+        /* 3. Left Sidebar */
+        aside {
+            width: 220px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            background-color: #7a0000;
+            color: #ffffff;
+            text-align: center;
+            padding: 8px 5px;
+            font-weight: bold;
+            font-size: 15px;
+            letter-spacing: 1px;
+            border: 1px solid #500000;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar-list li a {
+            display: block;
+            background-color: #ef9a9a;
+            color: #3d0000;
+            padding: 8px 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            border-bottom: 1px dashed #7a0000;
+            border-left: 1px solid #7a0000;
+            border-right: 1px solid #7a0000;
+        }
+
+        .sidebar-list li a:hover {
+            background-color: #e58787;
+        }
+
+        .sidebar-footer-box {
+            background-color: #582121;
+            height: 120px;
+            border: 1px solid #3b0000;
+            margin-top: 0;
+        }
+
+        /* 4. Main Content Area */
+        main {
+            flex-grow: 1;
+            background-color: #d16b6b;
+            border: 1px solid #6b1414;
+            padding: 15px;
+            height: 400px;
+            overflow-y: scroll;
+            color: #2b0000;
+        }
+
+        main h2 {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #1a0000;
+        }
+
+        .content-body {
+            line-height: 1.5;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        .content-image {
+            float: left;
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+            margin-right: 15px;
+            margin-bottom: 10px;
+            border: 3px solid #e0e0e0;
+            box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        }
+
+        /* Scrollbar Styling for Main Content */
+        main::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        main::-webkit-scrollbar-track {
+            background: #e0e0e0;
+        }
+
+        main::-webkit-scrollbar-thumb {
+            background: #a8a8a8;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Outer Wrapper -->
+    <div class="wrapper">
+        
+        <!-- 1. Header -->
+        <header>
+            <h1>Website Lingkungan/Kesehatan</h1>
+        </header>
+
+        <!-- 2. Navigation Bar -->
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+            <a href="#">Gallery</a>
+            <a href="#">Contact</a>
+        </nav>
+
+        <!-- Content Area -->
+        <div class="main-container">
+            
+            <!-- 3. Sidebar (Left Menu) -->
+            <aside>
+                <!-- Section 1: Kategori -->
+                <div class="sidebar-header">KATEGORI</div>
+                <ul class="sidebar-list">
+                    <li><a href="#">Video</a></li>
+                    <li><a href="#">Tutorial</a></li>
+                    <li><a href="#">Artikel</a></li>
+                    <li><a href="#">Ebook</a></li>
+                </ul>
+
+                <!-- Section 2: Link Favorite -->
+                <div class="sidebar-header" style="margin-top: 2px;">LINK FAVORITE</div>
+                <ul class="sidebar-list">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Tiktok</a></li>
+                    <li><a href="#">Twiter</a></li>
+                </ul>
+
+                <!-- Bottom Maroon Filler Box -->
+                <div class="sidebar-footer-box"></div>
+            </aside>
+
+            <!-- 4. Main Content Area (Right) -->
+            <main>
+                <h2>Judul Tema Yang Diambil</h2>
+                <div class="content-body">
+                    <!-- Image placeholder representing the girl in hijab with cat outdoors -->
+                    <img class="content-image" src="https://placehold.co/300x300/a39273/ffffff?text=Ilustrasi+Gambar" alt="Gambar Ilustrasi">
+                    
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt pariatur inventore nostrum quia eum quae consequatur rem sint officia repellendus ipsum voluptates numquam odit autem, eaque reiciendis, in dolorum. Magnam iusto ad eum eos possimus distinctio, iure veniam excepturi totam porro voluptatum architecto esse voluptate. Expedita atque omnis consequatur impedit perferendis earum voluptatum voluptatem ex fuga necessitatibus doloremque eaque animi assumenda delectus error quod debitis, accusantium beatae at molestias voluptate officia alias ab ad? Quibusdam culpa similique a? Consequatur nemo corporis aut, fugit quasi esse quaerat, a architecto consequuntur voluptatum hic? Eveniet aliquid aut dignissimos dolorum. Ea placeat expedita laboriosam molestias? Nostrum dolore eum, consectetur exercitationem neque id fugit excepturi, possimus delectus quisquam ullam quo non consequuntur laborum quod unde illum, distinctio reprehenderit! Laudantium eum dicta, commodi vel debitis tempore ut, soluta eius corrupti in, odit obcaecati laborum adipisci repellendus eaque cumque cupiditate error molestias at quibusdam aperiam! Eveniet, laboriosam modi nisi dolores veniam, quaerat porro.
+                    <br><br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto eaque voluptatem veritatis corrupti corporis est impedit rem nostrum facilis hic, quis sapiente non ab nihil quasi repellendus similique fuga temporibus?
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+</body>
+</html>

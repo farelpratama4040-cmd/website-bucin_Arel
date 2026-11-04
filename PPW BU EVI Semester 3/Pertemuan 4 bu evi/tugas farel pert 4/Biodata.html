@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Pendaftaran</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eef2f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .biodata-card {
+            background-color: #ffffff;
+            width: 550px;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #2ecc71;
+        }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        td.label {
+            font-weight: bold;
+            color: #34495e;
+            width: 35%;
+        }
+        .btn-back {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .btn-back:hover {
+            background-color: #2980b9;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="biodata-card">
+        <h2>Hasil Biodata Pendaftaran</h2>
+        
+        <table border="1" bordercolor="#dddddd" cellpadding="8" cellspacing="0">
+            <tr>
+                <td class="label">Nama Lengkap</td>
+                <td width="5%">:</td>
+                <td id="res-nama">Farel ilyasa habi pratama</td>
+            </tr>
+            <tr>
+                <td class="label">NIM</td>
+                <td>:</td>
+                <td id="res-nim">25041450138</td>
+            </tr>
+            <tr>
+                <td class="label">Email</td>
+                <td>:</td>
+                <td id="res-email">farelhabi112@gmail.com</td>
+            </tr>
+            <tr>
+                <td class="label">No. Telepon</td>
+                <td>:</td>
+                <td id="res-telp">0838-5279-4124</td>
+            </tr>
+            <tr>
+                <td class="label">Jenis Kelamin</td>
+                <td>:</td>
+                <td id="res-jk">Pria</td>
+            </tr>
+            <tr>
+                <td class="label">Program Studi</td>
+                <td>:</td>
+                <td id="res-prodi">Sistem Informasi</td>
+            </tr>
+            <tr>
+                <td class="label">Hobi</td>
+                <td>:</td>
+                <td id="res-hobi">Coding, Desain, Game</td>
+            </tr>
+            <tr>
+                <td class="label">Alamat</td>
+                <td>:</td>
+                <td id="res-alamat">Jalan raya banten 2, plaju, Palembang</td>
+            </tr>
+        </table>
+
+        <div class="btn-container">
+            <a href="Formulir.html" class="btn-back">Kembali Ke Formulir</a>
+        </div>
+    </div>
+
+    <script>
+        // Membaca parameter dari URL jika dikirim dari Formulir.html
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('nama')) document.getElementById('res-nama').textContent = urlParams.get('nama');
+        if (urlParams.has('nim')) document.getElementById('res-nim').textContent = urlParams.get('nim');
+        if (urlParams.has('email')) document.getElementById('res-email').textContent = urlParams.get('email');
+        if (urlParams.has('telp')) document.getElementById('res-telp').textContent = urlParams.get('telp');
+        if (urlParams.has('jk')) document.getElementById('res-jk').textContent = urlParams.get('jk');
+        if (urlParams.has('prodi')) document.getElementById('res-prodi').textContent = urlParams.get('prodi');
+        if (urlParams.getAll('hobi').length > 0) document.getElementById('res-hobi').textContent = urlParams.getAll('hobi').join(', ');
+        if (urlParams.has('alamat')) document.getElementById('res-alamat').textContent = urlParams.get('alamat');
+    </script>
+
+</body>
+</html>

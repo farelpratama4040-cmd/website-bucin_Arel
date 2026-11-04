@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collection | Toko Farel Collection</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1efe9;
+      color: #111;
+    }
+    .page {
+      width: 980px;
+      margin: 24px auto;
+      background: #f5f3ee;
+      border: 1px solid #d7d0c5;
+      box-shadow: 0 0 12px rgba(0,0,0,0.12);
+    }
+    .header {
+      background: linear-gradient(135deg, #111827 0%, #0f766e 100%);
+      text-align: center;
+      padding: 18px 20px 0;
+    }
+    .brand {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      min-height: 110px;
+    }
+    .shoe-icon {
+      font-size: 40px;
+      color: #fcd34d;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+    }
+    h1 {
+      margin: 0;
+      font-size: 50px;
+      color: #fff;
+      font-weight: 800;
+    }
+    .tagline {
+      margin: 0;
+      padding-bottom: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      font-style: italic;
+      color: #d1fae5;
+    }
+    .nav {
+      display: flex;
+      background: #111827;
+      border-top: 1px solid rgba(255,255,255,0.3);
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+    .nav a {
+      flex: 1;
+      text-align: center;
+      padding: 14px 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+    .nav a:last-child { border-right: none; }
+    .nav a:hover { background: rgba(255,255,255,0.08); }
+    .content {
+      background: #f4efe8;
+      padding: 26px 28px 32px;
+    }
+    .title {
+      text-align: center;
+      margin-bottom: 22px;
+      color: #0f172a;
+      font-size: 32px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(210px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-body {
+      padding: 14px;
+    }
+    .card-body h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+    .price {
+      color: #0f766e;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+      color: white;
+      text-decoration: none;
+      padding: 10px 12px;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      font-weight: bold;
+      background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+      padding: 18px 10px;
+      border-top: 2px solid #111;
+    }
+    @media (max-width: 760px) {
+      .page { width: 96%; }
+      .product-grid { grid-template-columns: 1fr; }
+      .nav { flex-wrap: wrap; }
+      .nav a { min-width: 50%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="brand">
+        <span class="shoe-icon">👟</span>
+        <h1>Toko Farel Collection</h1>
+        <span class="shoe-icon">👟</span>
+      </div>
+      <p class="tagline">~ Trendy Sneakers & Street Style ~</p>
+    </header>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="Tugas UTS Farel.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="payment.html">Checkout</a>
+      <a href="flowers.html">Collection</a>
+      <a href="guestbook.html">Guest Book</a>
+    </nav>
+
+    <main class="content">
+      <h2 class="title">Sneaker Collection</h2>
+      <section class="product-grid">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" alt="Nike Air Max" />
+          <div class="card-body">
+            <h3>Nike Air Max Pulse</h3>
+            <p>Sepatu casual dengan desain sporty yang cocok dipakai di mana saja.</p>
+            <div class="price">Rp 1.250.000</div>
+            <a href="payment.html" class="btn">Order</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=700&q=80" alt="Running shoes" />
+          <div class="card-body">
+            <h3>Adidas Samba</h3>
+            <p>Model timeless dengan comfort level tinggi untuk aktivitas harian.</p>
+            <div class="price">Rp 1.080.000</div>
+            <a href="payment.html" class="btn">Order</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=700&q=80" alt="Lifestyle sneaker" />
+          <div class="card-body">
+            <h3>New Balance 530</h3>
+            <p>Look premium dan modern untuk gaya santai maupun formal ringan.</p>
+            <div class="price">Rp 1.350.000</div>
+            <a href="payment.html" class="btn">Order</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=700&q=80" alt="Sneaker putih" />
+          <div class="card-body">
+            <h3>Vans Old Skool</h3>
+            <p>Ukuran yang cocok untuk style skate, urban, dan street casual.</p>
+            <div class="price">Rp 890.000</div>
+            <a href="payment.html" class="btn">Order</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f?auto=format&fit=crop&w=700&q=80" alt="Basket shoe" />
+          <div class="card-body">
+            <h3>Converse Run Star</h3>
+            <p>Desain ikonik dengan sentuhan retro yang makin populer di era now.</p>
+            <div class="price">Rp 950.000</div>
+            <a href="payment.html" class="btn">Order</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1607522370275-f14206abe5d3?auto=format&fit=crop&w=700&q=80" alt="Puma sneaker" />
+          <div class="card-body">
+            <h3>Puma Velocity</h3>
+            <p>Kombinasi ringan, kuat, dan trendi untuk tampil percaya diri setiap hari.</p>
+            <div class="price">Rp 1.150.000</div>
+            <a href="payment.html" class="btn">Order</a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      UTS Perancangan dan Pemrograman Web - Farel Ilyasa Habi Pratama, 25041450138
+    </footer>
+  </div>
+</body>
+</html>

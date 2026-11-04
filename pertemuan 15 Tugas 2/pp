@@ -1,0 +1,10 @@
+Matriks Ketetanggaan (bobot dalam ribuan rupiah):
+          Jakarta   Surabaya      Bali     Medan
+Jakarta        0       800      1200         0
+Surabaya       0         0       400         0
+Bali        1100         0         0         0
+Medan        900         0         0         0
+
+Pencarian dalam BST:
+Apakah 60 ditemukan? True
+Apakah 100 ditemukan? False

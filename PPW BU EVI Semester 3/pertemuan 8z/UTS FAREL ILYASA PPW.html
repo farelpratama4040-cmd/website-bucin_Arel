@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Farel Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="https://tse2.mm.bing.net/th/id/OIP.izhA3Uj6tNbI7NxhupD96gHaHa?r=0&pid=Api&h=220&P=0">
+</head>
+
+<body>
+    <div class="page">
+        <header class="header">
+            <div class="brand">
+                <span class="shoe-icon">👟</span>
+                <h1>Toko Farel Collection</h1>
+                <span class="shoe-icon">👟</span>
+            </div>
+            <p class="tagline">~ Trendy Sneakers & Street Style ~</p>
+        </header>
+
+        <nav class="nav" aria-label="Main navigation">
+            <a href="Tugas UTS Farel.html">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="payment.html">Checkout</a>
+            <a href="flowers.html">Collection</a>
+            <a href="guestbook.html">Guest Book</a>
+        </nav>
+
+        <main class="main">
+            <aside class="left-panel">
+                <div class="login-box">
+                    <div class="box-title">LOGIN</div>
+                    <form class="login-form" id="loginForm">
+                        <label for="username">Email / Username</label>
+                        <input type="text" id="username" placeholder="Masukkan email atau username" required>
+
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Masukkan password" required>
+
+                        <button class="login-button" type="submit" id="loginBtn">MASUK</button>
+                        <div id="loginStatus" class="status-message"></div>
+                        <div id="welcomeBox" class="welcome-box"></div>
+                    </form>
+                </div>
+            </aside>
+
+            <section class="center-panel">
+                <div class="content-header">~ Sepatu Hits Jaman Now ~</div>
+                <p>
+                    Toko Farel Collection hadir untuk memenuhi kebutuhan gaya Anda dengan koleksi sepatu hits yang sedang tren di kalangan remaja dan komunitas urban. Mulai dari sneakers streetwear, running shoes, hingga model casual premium, kami menyediakan pilihan yang selalu up to date.
+                </p>
+                <p>
+                    Kami fokus pada kualitas bahan, kenyamanan, dan desain yang tetap stylish. Setiap produk kami dipilih agar sesuai dengan kebutuhan harian, nongkrong, kerja, hingga event spesial. Semua item siap dikirim dengan pelayanan cepat dan aman.
+                </p>
+                <p>
+                    Brand favorit seperti Nike, Adidas, New Balance, Vans, Puma, dan Converse tersedia dalam berbagai warna dan ukuran. Nikmati promo eksklusif, free ongkir, dan pilihan pembayaran yang mudah untuk setiap pembelian Anda.
+                </p>
+
+                <div class="gallery" aria-label="Shoe gallery">
+                    <div class="photo">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="Sneakers warna putih dan merah">
+                    </div>
+                    <div class="photo">
+                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=600&q=80" alt="Sepatu olahraga pria">
+                    </div>
+                    <div class="photo">
+                        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80" alt="Sneakers casual premium">
+                    </div>
+                </div>
+            </section>
+
+            <aside class="right-panel">
+                <div class="menu-block">
+                    <h3>KATEGORI POPULER</h3>
+                    <ul class="menu-list">
+                        <li><a href="#">Sneaker Streetwear</a></li>
+                        <li><a href="#">Running Shoes</a></li>
+                        <li><a href="#">Lifestyle Casual</a></li>
+                        <li><a href="#">Basket & Skate</a></li>
+                        <li><a href="#">New Arrival</a></li>
+                    </ul>
+                </div>
+
+                <div class="menu-block account">
+                    <h3>FOLLOW US</h3>
+                    <ul class="menu-list">
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">TikTok</a></li>
+                        <li><a href="#">Shopee</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            UTS Perancangan dan Pemrograman Web - Farel Ilyasa Habi Pratama, 25041450138
+        </footer>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const loginStatus = document.getElementById('loginStatus');
+        const welcomeBox = document.getElementById('welcomeBox');
+
+        function showMessage(type, text) {
+            loginStatus.className = 'status-message ' + type;
+            loginStatus.textContent = text;
+        }
+
+        function clearMessage() {
+            loginStatus.className = 'status-message';
+            loginStatus.textContent = '';
+            welcomeBox.classList.remove('active');
+            welcomeBox.textContent = '';
+        }
+
+        [usernameInput, passwordInput].forEach((input) => {
+            input.addEventListener('input', clearMessage);
+        });
+
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            if (!username || !password) {
+                showMessage('error', 'Silakan isi email/username dan password terlebih dahulu.');
+                return;
+            }
+
+            showMessage('success', 'Login berhasil.');
+            welcomeBox.textContent = 'Selamat datang, ' + username + '!';
+            welcomeBox.classList.add('active');
+        });
+    </script>
+
+</body>
+</html>

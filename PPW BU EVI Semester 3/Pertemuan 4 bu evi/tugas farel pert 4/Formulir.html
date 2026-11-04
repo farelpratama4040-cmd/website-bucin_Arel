@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .form-card {
+            background-color: #ffffff;
+            width: 550px;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #008cba;
+        }
+        h2 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 8px 10px;
+            vertical-align: middle;
+            color: #444;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 95%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #008cba;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        input[type="reset"] {
+            background-color: #e74c3c;
+        }
+        input[type="submit"]:hover {
+            background-color: #005f73;
+        }
+        input[type="reset"]:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-card">
+        <h2>Formulir Pendaftaran</h2>
+        <form action="Biodata.html" method="get">
+            <table border="0" cellpadding="5" cellspacing="0">
+                <tr>
+                    <td width="35%"><label for="nama">Nama Lengkap</label></td>
+                    <td width="5%">:</td>
+                    <td width="60%"><input type="text" id="nama" name="nama" placeholder="Masukkan Nama Lengkap" required></td>
+                </tr>
+                <tr>
+                    <td><label for="nim">NIM</label></td>
+                    <td>:</td>
+                    <td><input type="text" id="nim" name="nim" placeholder="Masukkan NIM" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td>:</td>
+                    <td><input type="email" id="email" name="email" placeholder="contoh@domain.com" required></td>
+                </tr>
+                <tr>
+                    <td><label for="telp">No. Telepon</label></td>
+                    <td>:</td>
+                    <td><input type="tel" id="telp" name="telp" placeholder="08xxxxxxxxxx"></td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td>:</td>
+                    <td>
+                        <input type="radio" id="pria" name="jk" value="Pria" checked> <label for="pria">Pria</label>
+                        <input type="radio" id="wanita" name="jk" value="Wanita"> <label for="wanita">Wanita</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="prodi">Program Studi</label></td>
+                    <td>:</td>
+                    <td>
+                        <select id="prodi" name="prodi">
+                            <option value="Sistem Informasi">Sistem Informasi</option>
+                            <option value="Teknik Informatika">Teknik Informatika</option>
+                            <option value="Manajemen Informatika">Manajemen Informatika</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hobi</td>
+                    <td>:</td>
+                    <td>
+                        <input type="checkbox" id="coding" name="hobi" value="Coding"> <label for="coding">Coding</label>
+                        <input type="checkbox" id="desain" name="hobi" value="Desain"> <label for="desain">Desain</label><br>
+                        <input type="checkbox" id="game" name="hobi" value="Game"> <label for="game">Game</label>
+                        <input type="checkbox" id="baca" name="hobi" value="Membaca"> <label for="baca">Membaca</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="alamat">Alamat</label></td>
+                    <td>:</td>
+                    <td>
+                        <textarea id="alamat" name="alamat" rows="3" placeholder="Masukkan Alamat Lengkap"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center" style="padding-top: 15px;">
+                        <input type="submit" value="Daftar">
+                        <input type="reset" value="Reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>

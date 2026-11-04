@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toko Farel Collection</title>
+
+  <link rel="icon" type="image/png" href="https://tse2.mm.bing.net/th/id/OIP.izhA3Uj6tNbI7NxhupD96gHaHa?r=0&pid=Api&h=220&P=0">
+</head>
+  
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f3efe9 0%, #e4e1dc 100%);
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1b1b1b;
+    }
+
+    .page {
+      width: 980px;
+      margin: 20px auto;
+      background: #f7f5f1;
+      border: 1px solid #d4d1cb;
+      box-shadow: 0 0 12px rgba(0,0,0,0.12);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #101827 0%, #0d3b66 100%);
+      padding: 20px 20px 0;
+      text-align: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      min-height: 120px;
+    }
+
+    .shoe-icon {
+      font-size: 42px;
+      display: inline-block;
+      transform: rotate(-8deg);
+      color: #f9c74f;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.25);
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 52px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: #ffffff;
+      letter-spacing: 1px;
+      font-weight: 800;
+    }
+
+    .tagline {
+      margin: 0;
+      padding-bottom: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      font-style: italic;
+      color: #f4d58d;
+    }
+
+    .nav {
+      display: flex;
+      background: #0f172a;
+      border-top: 1px solid rgba(255,255,255,0.16);
+      border-bottom: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .nav a {
+      flex: 1;
+      text-align: center;
+      padding: 12px 8px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-right: 1px solid rgba(255,255,255,0.18);
+      cursor: pointer;
+    }
+
+    .nav a:last-child {
+      border-right: none;
+    }
+
+    .nav a:hover, .nav a.active-nav {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .tab-page {
+      display: none;
+    }
+
+    .tab-page.active-page {
+      display: block;
+    }
+
+    /* Style Home */
+    .main {
+      display: grid;
+      grid-template-columns: 240px 1fr 230px;
+      gap: 0;
+      background: #e9e1d4;
+      min-height: 520px;
+    }
+
+    .left-panel,
+    .right-panel {
+      background: #dfd8cd;
+      padding: 8px;
+    }
+
+    .center-panel {
+      background: #f4efe8;
+      padding: 12px 18px 20px;
+      border-left: 1px solid rgba(0,0,0,0.08);
+      border-right: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .login-box {
+      background: #f6f1e9;
+      height: 100%;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .box-title {
+      background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%);
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      padding: 12px 8px;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    .login-form {
+      padding: 12px 14px 14px;
+    }
+
+    .login-form label {
+      display: block;
+      font-size: 14px;
+      margin: 8px 0 4px;
+      font-weight: bold;
+    }
+
+    .login-form input {
+      width: 100%;
+      padding: 9px 10px;
+      border: 1px solid #b9b5af;
+      background: #fff;
+      margin-bottom: 8px;
+    }
+
+    .login-button {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+      background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+      color: white;
+      border: none;
+      padding: 10px 12px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .status-message {
+      display: none;
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .status-message.success {
+      display: block;
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #86efac;
+    }
+
+    .status-message.error {
+      display: block;
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fca5a5;
+    }
+
+    .welcome-box {
+      display: none;
+      margin-top: 12px;
+      padding: 10px 12px;
+      background: #ecfeff;
+      border: 1px solid #67e8f9;
+      color: #155e75;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .welcome-box.active {
+      display: block;
+    }
+
+    .content-header {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      font-style: italic;
+      margin: 10px 0 12px;
+      color: #101827;
+    }
+
+    .center-panel p {
+      font-size: 15px;
+      line-height: 1.6;
+      text-align: left;
+      margin: 0 0 12px;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .photo {
+      flex: 1;
+      height: 145px;
+      border: 3px solid #ef4444;
+      position: relative;
+      overflow: hidden;
+      background: #ddd;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .menu-block {
+      background: #edf2f7;
+      border: 1px solid rgba(0,0,0,0.08);
+      margin-top: 0;
+    }
+
+    .menu-block h3 {
+      margin: 0;
+      padding: 12px 10px;
+      color: white;
+      background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .menu-list {
+      list-style: none;
+      margin: 0;
+      padding: 10px 14px 12px;
+    }
+
+    .menu-list li {
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 7px 0;
+      font-size: 15px;
+    }
+
+    .menu-list li:last-child {
+      border-bottom: none;
+    }
+
+    .menu-list a {
+      color: #1f2937;
+      text-decoration: none;
+    }
+
+    .account {
+      margin-top: 18px;
+    }
+
+    .content {
+      background: #f4efe8;
+      padding: 26px 28px 32px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .profile-card {
+      background: #ffffff;
+      border: 1px solid #d7d1c8;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .profile-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border: 3px solid #0f766e;
+      margin-bottom: 10px;
+    }
+
+    .profile-card h3 {
+      margin: 6px 0;
+      color: #0f766e;
+    }
+
+    .info h2 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 30px;
+      color: #0f172a;
+    }
+
+    .info p {
+      font-size: 15px;
+      line-height: 1.7;
+      margin: 0 0 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(200px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .box {
+      background: #fff;
+      border: 1px solid #e1d8c9;
+      padding: 18px;
+    }
+
+    .box h3 {
+      margin-top: 0;
+      color: #0f766e;
+    }
+
+    .box ul {
+      margin: 0;
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+
+    /* Style Payment */
+    .panel {
+      background: #fffaf3;
+      border: 1px solid #e1d3b5;
+      padding: 20px;
+    }
+
+    .panel h2 {
+      margin-top: 0;
+      color: #0f172a;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .panel label, .panel input, .panel select, .panel textarea {
+      display: block;
+    }
+
+    .panel label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .panel input, .panel select, .panel textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #c7c2b8;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .panel textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      font-weight: bold;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 8px;
+      text-decoration: none;
+    }
+
+    .summary {
+      margin-top: 24px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      padding: 16px;
+    }
+
+    .summary table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .summary th, .summary td {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 10px 8px;
+      text-align: left;
+    }
+
+    /* Style Flowers (Collection) */
+    .title {
+      text-align: center;
+      margin-bottom: 22px;
+      color: #0f172a;
+      font-size: 32px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(210px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 14px;
+    }
+
+    .card-body h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .price {
+      color: #0f766e;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    /* Style Guestbook */
+    .guestbook-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+    }
+
+    .comment {
+      background: white;
+      border: 1px solid #e5e7eb;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+    }
+
+    .comment strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 18px 12px 22px;
+      background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+      border-top: 2px solid #0f172a;
+      color: #111827;
+    }
+
+    @media (max-width: 1000px) {
+      .page {
+        width: 96%;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .main, .hero, .grid, .form-grid, .guestbook-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .center-panel {
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid rgba(0,0,0,0.12);
+        border-bottom: 1px solid rgba(0,0,0,0.12);
+      }
+
+      .nav {
+        flex-wrap: wrap;
+      }
+
+      .nav a {
+        min-width: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="brand">
+        <span class="shoe-icon">👟</span>
+        <h1>Toko Indah Rudin</h1>
+        <span class="shoe-icon">👟</span>
+      </div>
+      <p class="tagline">~ Trendy Sneakers & Street Style ~</p>
+    </header>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a onclick="showPage('home')" id="nav-home" class="active-nav">Home</a>
+      <a onclick="showPage('profile')" id="nav-profile">Profile</a>
+      <a onclick="showPage('payment')" id="nav-payment">Checkout</a>
+      <a onclick="showPage('flowers')" id="nav-flowers">Collection</a>
+      <a onclick="showPage('guestbook')" id="nav-guestbook">Guest Book</a>
+    </nav>
+
+    <!-- 1. BAGIAN HOME  -->
+    <div id="page-home" class="tab-page active-page">
+      <main class="main">
+        <aside class="left-panel">
+          <div class="login-box">
+            <div class="box-title">MEMBER LOGIN</div>
+            <div class="login-form">
+              <label for="username">Username</label>
+              <input type="text" id="username" placeholder="Masukkan username">
+
+              <label for="password">Password</label>
+              <input type="password" id="password" placeholder="Password...">
+
+              <button class="login-button" type="button" id="loginBtn">LOGIN</button>
+              <div id="loginStatus" class="status-message"></div>
+              <div id="welcomeBox" class="welcome-box"></div>
+            </div>
+          </div>
+        </aside>
+
+        <section class="center-panel">
+          <div class="content-header">~ Sepatu Hits Jaman Now ~</div>
+          <p>
+            Toko Farel Collection hadir untuk memenuhi kebutuhan gaya Anda dengan koleksi sepatu hits yang sedang tren di kalangan remaja dan komunitas urban. Mulai dari sneakers streetwear, running shoes, hingga model casual premium, kami menyediakan pilihan yang selalu up to date.
+          </p>
+          <p>
+            Kami fokus pada kualitas bahan, kenyamanan, dan desain yang tetap stylish. Setiap produk kami dipilih agar sesuai dengan kebutuhan harian, nongkrong, kerja, hingga event spesial. Semua item siap dikirim dengan pelayanan cepat dan aman.
+          </p>
+          <p>
+            Brand favorit seperti Nike, Adidas, New Balance, Vans, Puma, dan Converse tersedia dalam berbagai warna dan ukuran. Nikmati promo eksklusif, free ongkir, dan pilihan pembayaran yang mudah untuk setiap pembelian Anda.
+          </p>
+
+          <div class="gallery" aria-label="Shoe gallery">
+            <div class="photo">
+              <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="Sneakers warna putih dan merah">
+            </div>
+            <div class="photo">
+              <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=600&q=80" alt="Sepatu olahraga pria">
+            </div>
+            <div class="photo">
+              <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80" alt="Sneakers casual premium">
+            </div>
+          </div>
+        </section>
+
+        <aside class="right-panel">
+          <div class="menu-block">
+            <h3>KATEGORI POPULER</h3>
+            <ul class="menu-list">
+              <li><a href="#">Sneaker Streetwear</a></li>
+              <li><a href="#">Running Shoes</a></li>
+              <li><a href="#">Lifestyle Casual</a></li>
+              <li><a href="#">Basket & Skate</a></li>
+              <li><a href="#">New Arrival</a></li>
+            </ul>
+          </div>
+
+          <div class="menu-block account">
+            <h3>FOLLOW US</h3>
+            <ul class="menu-list">
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">TikTok</a></li>
+              <li><a href="#">Shopee</a></li>
+            </ul>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <!-- 2. BAGIAN PROFILE -->
+    <div id="page-profile" class="tab-page">
+      <main class="content">
+        <section class="hero">
+          <div class="profile-card">
+            <img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f?auto=format&fit=crop&w=700&q=80" alt="Sneaker product showcase" />
+            <h3>Toko Farel Collection</h3>
+            <p>Streetwear & Footwear Lifestyle</p>
+          </div>
+
+          <div class="info">
+            <h2>Profil Toko</h2>
+            <p>
+              Toko Farel Collection adalah toko sepatu yang menghadirkan pilihan sneakers dan footwear gaya modern untuk kebutuhan sehari-hari. Kami fokus pada tren kini yang digemari kalangan muda, mulai dari streetwear hingga lifestyle premium.
+            </p>
+            <p>
+              Setiap produk yang kami jual dipilih berdasarkan kualitas bahan, kenyamanan, dan tampilan yang mengikuti perkembangan mode saat ini. Dengan pelayanan cepat, desain yang stylish, serta stok yang terus diperbarui, kami siap menjadi pilihan utama Anda.
+            </p>
+          </div>
+        </section>
+
+        <section class="grid">
+          <div class="box">
+            <h3>Visi Kami</h3>
+            <ul>
+              <li>Menjadi toko sepatu pilihan utama untuk gaya masa kini.</li>
+              <li>Menyediakan koleksi yang trendi, nyaman, dan berkualitas.</li>
+              <li>Memberikan pengalaman belanja yang praktis dan menyenangkan.</li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <h3>Misi Kami</h3>
+            <ul>
+              <li>Memastikan setiap produk memiliki kualitas terbaik dan desain ikonik.</li>
+              <li>Mengutamakan kepuasan pelanggan melalui pelayanan ramah dan responsif.</li>
+              <li>Menyajikan produk yang cocok untuk aktivitas harian maupun acara spesial.</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- 3. BAGIAN CHECKOUT -->
+    <div id="page-payment" class="tab-page">
+      <main class="content">
+        <div class="panel">
+          <h2>Konfirmasi Pembayaran</h2>
+          <form>
+            <div class="form-grid">
+              <div>
+                <label>Nama Lengkap</label>
+                <input type="text" placeholder="Masukkan nama lengkap" />
+              </div>
+              <div>
+                <label>Nomor Order</label>
+                <input type="text" placeholder="FAR-2048" />
+              </div>
+              <div>
+                <label>Metode Pembayaran</label>
+                <select>
+                  <option>Transfer Bank</option>
+                  <option>E-Wallet</option>
+                  <option>COD</option>
+                </select>
+              </div>
+              <div>
+                <label>Jumlah Transfer</label>
+                <input type="text" placeholder="Rp 1.250.000" />
+              </div>
+              <div class="full">
+                <label>Bank Tujuan</label>
+                <input type="text" placeholder="BCA / BRI / Mandiri" />
+              </div>
+              <div class="full">
+                <label>Alamat Pengiriman</label>
+                <textarea placeholder="Tulis alamat lengkap pengiriman Anda..."></textarea>
+              </div>
+              <div class="full">
+                <button class="btn" type="submit">Kirim Konfirmasi</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="summary">
+            <h3>Ringkasan Pesanan</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Produk</th>
+                  <th>Harga</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Nike Air Max Pulse</td>
+                  <td>Rp 1.250.000</td>
+                </tr>
+                <tr>
+                  <td>Biaya Pengiriman</td>
+                  <td>Rp 35.000</td>
+                </tr>
+                <tr>
+                  <td><strong>Total</strong></td>
+                  <td><strong>Rp 1.285.000</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- 4. BAGIAN COLLECTION -->
+    <div id="page-flowers" class="tab-page">
+      <main class="content">
+        <h2 class="title">Sneaker Collection</h2>
+        <section class="product-grid">
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" alt="Nike Air Max" />
+            <div class="card-body">
+              <h3>Nike Air Max Pulse</h3>
+              <p>Sepatu casual dengan desain sporty yang cocok dipakai di mana saja.</p>
+              <div class="price">Rp 1.250.000</div>
+              <a onclick="showPage('payment')" class="btn">Order</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=700&q=80" alt="Running shoes" />
+            <div class="card-body">
+              <h3>Adidas Samba</h3>
+              <p>Model timeless dengan comfort level tinggi untuk aktivitas harian.</p>
+              <div class="price">Rp 1.080.000</div>
+              <a onclick="showPage('payment')" class="btn">Order</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=700&q=80" alt="Lifestyle sneaker" />
+            <div class="card-body">
+              <h3>New Balance 530</h3>
+              <p>Look premium dan modern untuk gaya santai maupun formal ringan.</p>
+              <div class="price">Rp 1.350.000</div>
+              <a onclick="showPage('payment')" class="btn">Order</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=700&q=80" alt="Sneaker putih" />
+            <div class="card-body">
+              <h3>Vans Old Skool</h3>
+              <p>Ukuran yang cocok untuk style skate, urban, dan street casual.</p>
+              <div class="price">Rp 890.000</div>
+              <a onclick="showPage('payment')" class="btn">Order</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f?auto=format&fit=crop&w=700&q=80" alt="Basket shoe" />
+            <div class="card-body">
+              <h3>Converse Run Star</h3>
+              <p>Desain ikonik dengan sentuhan retro yang makin populer di era now.</p>
+              <div class="price">Rp 950.000</div>
+              <a onclick="showPage('payment')" class="btn">Order</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1607522370275-f14206abe5d3?auto=format&fit=crop&w=700&q=80" alt="Puma sneaker" />
+            <div class="card-body">
+              <h3>Puma Velocity</h3>
+              <p>Kombinasi ringan, kuat, dan trendi untuk tampil percaya diri setiap hari.</p>
+              <div class="price">Rp 1.150.000</div>
+              <a onclick="showPage('payment')" class="btn">Order</a>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <!-- 5. BAGIAN GUESTBOOK -->
+    <div id="page-guestbook" class="tab-page">
+      <main class="content">
+        <div class="guestbook-layout">
+          <section class="panel">
+            <h2>Guest Book</h2>
+            <form>
+              <label>Nama</label>
+              <input type="text" placeholder="Masukkan nama Anda" />
+
+              <label>Email</label>
+              <input type="email" placeholder="nama@email.com" />
+
+              <label>Rating</label>
+              <select>
+                <option>★★★★★ Sangat Puas</option>
+                <option>★★★★☆ Puas</option>
+                <option>★★★☆☆ Cukup</option>
+              </select>
+
+              <label>Pesan</label>
+              <textarea placeholder="Tulis pengalaman Anda saat membeli sepatu di toko kami..."></textarea>
+
+              <button type="submit" class="btn">Kirim</button>
+            </form>
+          </section>
+
+          <aside class="panel">
+            <h2>Ulasan Pelanggan</h2>
+            <div class="comment">
+              <strong>Rina S.</strong>
+              Sepatu yang saya pilih sangat nyaman dipakai sehari-hari dan desainnya keren banget.
+            </div>
+            <div class="comment">
+              <strong>Ahmad K.</strong>
+              Layanan cepat, kurir tepat waktu, dan kualitas produknya sesuai dengan advertorial.
+            </div>
+            <div class="comment">
+              <strong>Putri M.</strong>
+              Saya suka banget model sneakersnya yang hits dan cocok untuk outfit casual.
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      UTS Perancangan dan Pemrograman Web - Farel Ilyasa Habi Pratama. 25041450138
+    </footer>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+
+      const pages = document.querySelectorAll('.tab-page');
+      pages.forEach(page => page.classList.remove('active-page'));
+
+      const targetPage = document.getElementById('page-' + pageId);
+      if (targetPage) {
+        targetPage.classList.add('active-page');
+      }
+      const navLinks = document.querySelectorAll('.nav a');
+      navLinks.forEach(link => link.classList.remove('active-nav'));
+
+      const targetNav = document.getElementById('nav-' + pageId);
+      if (targetNav) {
+        targetNav.classList.add('active-nav');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    const loginBtn = document.getElementById('loginBtn');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const loginStatus = document.getElementById('loginStatus');
+    const welcomeBox = document.getElementById('welcomeBox');
+
+    function showMessage(type, message) {
+      loginStatus.className = 'status-message ' + type;
+      loginStatus.textContent = message;
+    }
+
+    function renderWelcome(username) {
+      welcomeBox.classList.add('active');
+      welcomeBox.textContent = 'Login berhasil! Selamat datang, ' + username + ' 👋';
+    }
+
+    const savedMember = JSON.parse(localStorage.getItem('memberLogin'));
+    if (savedMember && savedMember.username) {
+      renderWelcome(savedMember.username);
+    }
+
+    loginBtn.addEventListener('click', function () {
+      const username = usernameInput.value.trim();
+      const password = passwordInput.value.trim();
+
+      if (!username || !password) {
+        showMessage('error', 'Username dan password harus diisi!');
+        return;
+      }
+
+      const memberData = {
+        username: username,
+        password: password,
+        loginAt: new Date().toISOString()
+      };
+
+      localStorage.setItem('memberLogin', JSON.stringify(memberData));
+      renderWelcome(username);
+      showMessage('success', 'Login berhasil. Data member telah tersimpan.');
+      usernameInput.value = '';
+      passwordInput.value = '';
+    });
+  </script>
+</body>
+</html>

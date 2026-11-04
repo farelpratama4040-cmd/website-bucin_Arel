@@ -1,0 +1,164 @@
+/* Pengaturan Dasar & Font Baru */
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Gradasi background yang lebih modern */
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    min-height: 100vh;
+    padding: 30px 20px;
+    margin: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.judul-utama {
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+}
+
+/* Desain Kartu (Card) dengan efek kaca (Glass effect) */
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animasi saat kartu disentuh mouse */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    color: #2c3e50;
+}
+
+/* Tata letak input berjejer */
+.input-group {
+    display: flex;
+    gap: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0 15px 0;
+    border: 2px solid #e1e5eb;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* Animasi nyala saat input diklik */
+input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+    outline: none;
+}
+
+/* Desain Tombol Canggih */
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+/* Efek Tombol Ngangkat */
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+button:active {
+    transform: translateY(1px);
+}
+
+/* Warna-warni Tombol */
+.btn-utama { width: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.btn-cari { background-color: #2ecc71; width: 30%; }
+.btn-sort { flex: 1; }
+.btn-ungu { background-color: #9b59b6; }
+.btn-oren { background-color: #e67e22; }
+.btn-abu { background-color: #95a5a6; }
+.btn-export { width: 100%; background-color: #1abc9c; }
+
+.grup-kontrol {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+.flex-bar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Desain Tabel Kekinian */
+.table-container {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+table { width: 100%; border-collapse: collapse; }
+th { 
+    background-color: #2c3e50; 
+    color: white; 
+    padding: 18px 15px; 
+    text-align: left; 
+}
+td { 
+    border-bottom: 1px solid #eee; 
+    padding: 15px; 
+}
+
+/* Efek animasi di setiap baris tabel */
+tr {
+    transition: background-color 0.3s ease;
+}
+tr:hover { background-color: #f1f4f8; }
+
+/* ========================================== */
+/* ANIMASI KEYFRAMES (RAHASIA BIAR HIDUP)   */
+/* ========================================== */
+
+/* Animasi Muncul dari Bawah */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* Animasi untuk baris tabel yang baru muncul */
+.row-animate {
+    animation: fadeInUp 0.4s ease-out forwards;
+}
